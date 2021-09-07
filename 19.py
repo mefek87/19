@@ -72,7 +72,7 @@ while game_state == 1:
 #for mine selection
 		if len(bet) > 2:
 			mines_left -=1
-			board[int(row)][int(col)] = "|>"
+			board[int(row)][int(col)] = "f0 9f 9a a9"
 #for normal bet		
 		else:
 			adjacent_x = []
