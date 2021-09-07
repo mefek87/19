@@ -3,23 +3,15 @@ import random
 print("Welcome to minesweeper")
 print("Please choose the board dimensions and the difficulty level:")
 #choose_size
-width = int(input("Declare width of the board:"))
-height = int(input("Declare height of the board:"))
+width=input("Declare width of the board:")
+height=input("Declare height of the board:")
 #choose_difficulty
 difficulty_status=False
-while  difficulty_status is False:
+while difficulty_status is False:
 	print("Please type in the difficulty level (easy, medium or hard):")
-	difficulty = input("Chosen difficulty:")
-	if difficulty == "easy":
-		difficulty_status = True
-	elif difficulty == "medium":
-		difficulty_status = True
-	elif difficulty =="hard":
-		difficulty_status = True
-	else:
-		difficulty_status = False
-#if difficulty in ("easy","medium","hard")
-#    difficulty_status=True
+	difficulty=input("Chosen difficulty:")
+	if difficulty in ("easy","medium","hard")
+		difficulty_status=True
 print("Let's begin!")
 #game_setup
 if difficulty == "easy" :
@@ -81,7 +73,7 @@ while game_state == 1:
 			for x in range (-1,2):
 				adjacent_x.append(row + x)
 			for y in range (-1,2):
-				adjacent_y.append(col) + y)
+				adjacent_y.append(col + y)
 			for x in adjacent_x:
 				for y in adjacent_y:
 					adjacent_list.append(str(x) + str(y))
