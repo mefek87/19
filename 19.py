@@ -7,9 +7,9 @@ width = int(input("Declare width of the board:"))
 height = int(input("Declare height of the board:"))
 #choose_difficulty
 difficulty_status=False
-while  difficulty_status==False:
+while  difficulty_status is False:
 	print("Please type in the difficulty level (easy, medium or hard):")
-	difficulty = str(input("Chosen difficulty:"))
+	difficulty = input("Chosen difficulty:")
 	if difficulty == "easy":
 		difficulty_status = True
 	elif difficulty == "medium":
@@ -18,6 +18,8 @@ while  difficulty_status==False:
 		difficulty_status = True
 	else:
 		difficulty_status = False
+#if difficulty in ("easy","medium","hard")
+#    difficulty_status=True
 print("Let's begin!")
 #game_setup
 if difficulty == "easy" :
@@ -26,15 +28,17 @@ elif difficulty == "medium" :
 	mines_qt = 0.2
 elif difficulty == "hard" : 
 	mines_qt = 0.4
-mines_number = int(int(width)*int(height)*mines_qt)
+#difficulty_lvl={"easy":0.1,"medium":0.2,"hard":0.4}
+#mines_qt=difficulty_lvl[difficulty]
+mines_number = int(width*height*mines_qt)
 	#print(difficulty)
 	#print(mines_qt)
 	#print(mines_number)
 #board_initial_setup
 board = []
-row = int(width)
-col = int(height)
-for x in range (0, row): 
+row = width
+col = height
+for x in range (0, row):
   board.append([])
   for y in range(0, col):
     board[x].append(str(x) + str(y))
@@ -55,10 +59,11 @@ while game_state == 1:
 	print("Type in your bet as xy coordinates. For mine selection, type 'xy_mine'.")
 	bet = str(input("Your bet: "))
 #death condition	
-	if str(bet) in mines_list:
+	if bet in mines_list:
 		game_state = 0
 		print("BOOM! YOU'RE DEAD!")
 		print("Try again some other time!")
+#break
 #game loop condition
 	else:
 		game_state = 1
@@ -74,9 +79,9 @@ while game_state == 1:
 			adjacent_y = []
 			adjacent_list=[]
 			for x in range (-1,2):
-				adjacent_x.append(int(row) + int(x))
+				adjacent_x.append(row + x)
 			for y in range (-1,2):
-				adjacent_y.append(int(col) + int(y))
+				adjacent_y.append(col) + y)
 			for x in adjacent_x:
 				for y in adjacent_y:
 					adjacent_list.append(str(x) + str(y))
